@@ -1,3 +1,12 @@
+/*
+ * @AUTHOR  : Kyle DILBECK 
+ * @TITLE   : hw1(instTable).java
+ * @DATE    : 8/27/2020
+ * @v       : 1.0.0
+ * @ABSTRACT: this program will now correctly look up the given test ID or return null if none. 
+ */
+
+
 package table;
 
 import java.util.ArrayList;
@@ -50,12 +59,12 @@ public class InstTable {
 	 * @return
 	 */
 	public InstTuple lookup(String ID) {
-		throw new UnsupportedOperationException();
-		
-		/*
-		 * YOUR CODE HERE
-		 * (remove that throw statement above after adding your code)
-		 */
+		//throw new UnsupportedOperationException();
+		int j = keyIndex(ID); 
+		if(j >= 0 ){
+			return tuples.get(j); 
+		}
+		return null; 
 	}
 	
 	/**
