@@ -70,7 +70,8 @@ public class HeapDB implements DB, Iterable<Record> {
 
 	// indexes[fieldNum] is the index for the field of the schema with
 	// with the given number
-	DBIndex[] indexes;
+	DBIndex[] indexes;//length is number of colum, elements is index over the column 
+	//if no index ==  null 
 
 	// private constructor
 	private HeapDB(BlockedFile bf, Schema schema) {
@@ -221,8 +222,8 @@ public class HeapDB implements DB, Iterable<Record> {
 				
 				for (int i=0; i< indexes.length; i++) {
 					if (indexes[i]!=null) {
-						// maintain index[i], 
-						// indexes[i].insert( <<column value from record>>, blockNum );
+						//maintain index[i], 
+						//indexes[i].insert( DBIndex[i], blockNum );
 					}
 				}
 
@@ -416,9 +417,12 @@ public class HeapDB implements DB, Iterable<Record> {
 		// for each record in the DB, you will need to insert its
 		// index column value and the block number
 		
-		// HINT:  see method diagnosticPrint for example of how to 
+		// HINT:  see method toStringDiagnostic() for example of how to 
 		// iterate of all data blocks in table and all rows
 		// in each block
+		for (Record rec : this) {
+			// ...
+	    }
 		
 	
 		throw new UnsupportedOperationException();
