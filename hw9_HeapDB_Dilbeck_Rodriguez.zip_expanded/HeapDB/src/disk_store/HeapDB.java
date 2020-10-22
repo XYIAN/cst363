@@ -423,7 +423,28 @@ public class HeapDB implements DB, Iterable<Record> {
 		for (Record rec : this) {
 			// ...
 	    }
-		
+		//traversal and print, change to initialize 
+//		for (int blockNum = bitmapBlock + 1; blockNum <= bf.getLastBlockIndex(); blockNum++) {
+//			bf.read(blockNum, buffer);
+//			// print the record bitmap of block 
+//			sb.append("Block " + blockNum + "\n");
+//			sb.append("Record bitmap: " + recMap + "\n");
+//			int recsOnLine = 0;
+//			for (int recNum = 0; recNum < recMap.size(); recNum++) {
+//				if (recMap.getBit(recNum)) {
+//					// record j is present; check its key value
+//					int loc = recordLocation(recNum);
+//					rec.deserialize(buffer.buffer, loc);
+//					sb.append(rec);//sb==string buffer--returns large string with 
+//					recsOnLine++;//block numbers and bit map nums
+//					if (recsOnLine % 16 == 0) {
+//						sb.append("\n");
+//					}
+//				}
+//			}
+//			sb.append("\n");
+//		}
+//		return sb.toString();
 	
 		throw new UnsupportedOperationException();
 	}
@@ -537,8 +558,8 @@ public class HeapDB implements DB, Iterable<Record> {
 					// record j is present; check its key value
 					int loc = recordLocation(recNum);
 					rec.deserialize(buffer.buffer, loc);
-					sb.append(rec);
-					recsOnLine++;
+					sb.append(rec);//sb==string buffer--returns large string with 
+					recsOnLine++;//block numbers and bit map nums
 					if (recsOnLine % 16 == 0) {
 						sb.append("\n");
 					}
