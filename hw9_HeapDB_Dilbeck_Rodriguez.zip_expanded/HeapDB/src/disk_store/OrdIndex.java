@@ -18,7 +18,7 @@ public class OrdIndex implements DBIndex {
 	
 	private class Entry {
 		int key;
-		ArrayList<BlockCount> blocks;
+		ArrayList<BlockCount> blocks;//list of block nums 
 	}
 	
 	private class BlockCount {
@@ -26,18 +26,18 @@ public class OrdIndex implements DBIndex {
 		int count;
 	}
 	
-	ArrayList<Entry> entries;
-	int size = 0;
+	ArrayList<Entry> entries;//index for blocks 
+	int size = 0;//size of index
 	
 	/**
 	 * Create an new ordered index.
 	 */
 	public OrdIndex() {
-		entries = new ArrayList<>();
+		entries = new ArrayList<>();//creating new index cons 
 	}
 	
 	@Override
-	public List<Integer> lookup(int key) {
+	public List<Integer> lookup(int key) {//list<int> block numbers that contain row index
 		// binary search of entries arraylist
 		// return list of block numbers (no duplicates). 
 		// if key not found, return empty list
@@ -47,6 +47,7 @@ public class OrdIndex implements DBIndex {
 	@Override
 	public void insert(int key, int blockNum) {
 		throw new UnsupportedOperationException();
+		//create new entry into array list 
 	}
 
 	@Override
