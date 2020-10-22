@@ -47,7 +47,13 @@ public class OrdIndex implements DBIndex {
 	@Override
 	public void insert(int key, int blockNum) {
 		throw new UnsupportedOperationException();
-		//create new entry into array list 
+//		for(int j = 0 ; j < entries.size();j++ ) {
+//			//for(int k=0; k< entries.size();k++) {
+//				if(entries.indexOf(j) == key ) {
+//				
+//				}
+//			//}
+//		}
 	}
 
 	@Override
