@@ -420,9 +420,11 @@ public class HeapDB implements DB, Iterable<Record> {
 		// HINT:  see method toStringDiagnostic() for example of how to 
 		// iterate of all data blocks in table and all rows
 		// in each block
+		/*linear traversal
 		for (Record rec : this) {
 			// ...
 	    }
+	    */
 		//traversal and print, change to initialize 
 //		for (int blockNum = bitmapBlock + 1; blockNum <= bf.getLastBlockIndex(); blockNum++) {
 //			bf.read(blockNum, buffer);
