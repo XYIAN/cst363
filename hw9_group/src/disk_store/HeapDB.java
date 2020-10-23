@@ -317,7 +317,8 @@ public class HeapDB implements DB, Iterable<Record> {
 					// no index on this column.  do linear scan
 					// add all records into "result"
 					for (Record rec : this) {
-						// ...
+						 //indexes.add(rec);
+						 
 				    }
 					
 				} else {
