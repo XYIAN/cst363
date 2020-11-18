@@ -50,8 +50,11 @@ class OrdIndexTest {
 	
 	@Test
 	void testDelete() {
+		
 		idx.delete(2, 1);
+		System.out.println(idx.size());
 		assertTrue(idx.size() == 6);
+		
          
 		idx.delete(1, 1);
 		assertTrue(idx.size() == 5);
